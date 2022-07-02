@@ -12,3 +12,4 @@ echo 'je teste une autre fois'
 printenv 
 printenv > variable.txt
 echo "End of my script"
+echo 11107d6f8e577a56a26c7ab21be3107528
