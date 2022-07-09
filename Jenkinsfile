@@ -46,7 +46,7 @@ pipeline {
 
         stage('error') {
           steps {
-            sh 'echo "je créé une erreur"'
+            sh 'echo "je crÃ©Ã© une erreur"'
           }
         }
 
