@@ -7,8 +7,19 @@ pipeline {
   }
   stages {
     stage('buz buz') {
-      steps {
-        echo 'Hello Vianney'
+      parallel {
+        stage('buz buz') {
+          steps {
+            echo 'Hello Vianney'
+          }
+        }
+
+        stage('build2') {
+          steps {
+            echo 'Test para'
+          }
+        }
+
       }
     }
 
