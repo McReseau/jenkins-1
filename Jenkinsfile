@@ -13,6 +13,10 @@ pipeline {
     }
 
     stage('Bees Bees Bees') {
+      agent any
+      environment {
+        ENV = 'Windows'
+      }
       steps {
         echo 'Hello TENNE'
         echo 'Hello NOUTENIJEU'
