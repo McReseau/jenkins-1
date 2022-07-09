@@ -21,8 +21,11 @@ pipeline {
       }
     }
 
-  }
-  environment {
-    FIRSTNUMBER = '13'
+    stage('Buzz Build') {
+      steps {
+        archiveArtifacts(allowEmptyArchive: true, caseSensitive: true, fingerprint: true, onlyIfSuccessful: true, artifacts: '*enkins*')
+      }
+    }
+
   }
 }
