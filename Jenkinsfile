@@ -60,6 +60,9 @@ pipeline {
     }
 
     stage('deploy') {
+      when {
+        branch 'main'
+      }
       steps {
         input(message: 'Ready to deploy?', ok: 'Yes', submitter: 'vianney')
       }
