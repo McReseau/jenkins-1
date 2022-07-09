@@ -59,5 +59,11 @@ pipeline {
       }
     }
 
+    stage('deploy') {
+      steps {
+        input(message: 'Ready to deploy?', ok: 'Yes', submitter: 'vianney')
+      }
+    }
+
   }
 }
