@@ -24,15 +24,32 @@ pipeline {
     }
 
     stage('Bees Bees Bees') {
-      agent any
-      environment {
-        ENV = 'Windows'
-      }
-      steps {
-        echo 'Hello TENNE'
-        echo 'Hello NOUTENIJEU'
-        echo 'Hello Mc'
-        echo 'Hello Vianney'
+      parallel {
+        stage('Bees Bees Bees') {
+          agent any
+          environment {
+            ENV = 'Windows'
+          }
+          steps {
+            echo 'Hello TENNE'
+            echo 'Hello NOUTENIJEU'
+            echo 'Hello Mc'
+            echo 'Hello Vianney'
+          }
+        }
+
+        stage('Test2') {
+          steps {
+            stash(name: 'Jenkinsfile', allowEmpty: true)
+          }
+        }
+
+        stage('error') {
+          steps {
+            sh 'sh je créé une erreur'
+          }
+        }
+
       }
     }
 
